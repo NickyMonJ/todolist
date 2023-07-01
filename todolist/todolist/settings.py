@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-d4v=ofkmal$urbsz+grlk&rlrolr#9g^3rcisc-#z#8erob50^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'todolist.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'nickym_todolist',
+        'USER': 'nickym_test',
+        'PASSWORD': "Peluditosnm22",
+        'HOST': 'postgresql-nickym.alwaysdata.net',
+        'PORT': '5432',
     }
 }
 
@@ -125,3 +129,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles", "static")
